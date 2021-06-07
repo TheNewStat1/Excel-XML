@@ -1,0 +1,4 @@
+C:\Users\pprat\Documents\dotent_sandbox\OpenCML_Sandbox\OpenCML_Sandbox\Excel-XML\obj\Debug\net46\OpenCML_Sandbox.csprojAssemblyReference.cache
+C:\Users\pprat\Documents\dotent_sandbox\OpenCML_Sandbox\OpenCML_Sandbox\Excel-XML\obj\Debug\net46\OpenCML_Sandbox.AssemblyInfoInputs.cache
+C:\Users\pprat\Documents\dotent_sandbox\OpenCML_Sandbox\OpenCML_Sandbox\Excel-XML\obj\Debug\net46\OpenCML_Sandbox.AssemblyInfo.cs
+C:\Users\pprat\Documents\dotent_sandbox\OpenCML_Sandbox\OpenCML_Sandbox\Excel-XML\obj\Debug\net46\OpenCML_Sandbox.csproj.CoreCompileInputs.cache
