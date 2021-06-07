@@ -1,16 +1,6 @@
 ﻿using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
-using System;
-using System.IO;
-using A = DocumentFormat.OpenXml.Drawing;
-using AP = DocumentFormat.OpenXml.ExtendedProperties;
-using THM15 = DocumentFormat.OpenXml.Office2013.Theme;
-using VT = DocumentFormat.OpenXml.VariantTypes;
-using X14 = DocumentFormat.OpenXml.Office2010.Excel;
-using X15 = DocumentFormat.OpenXml.Office2013.Excel;
-using X15AC = DocumentFormat.OpenXml.Office2013.ExcelAc;
-using OpenXmlSample;
 
 namespace OpenXmlSample
 {
@@ -33,7 +23,7 @@ namespace OpenXmlSample
             stylesheet.MCAttributes = markupCompatibilityAttributes1;
 
 
-            // Init Fonts Markup
+            // Init Fonts XML Markup
             Fonts fonts = new Fonts();
             fonts.Count = 1u; // Specify number of fonts
             fonts.KnownFonts = true;
@@ -61,14 +51,67 @@ namespace OpenXmlSample
             fontScheme.Val = FontSchemeValues.Minor;
             defaultFont.Append(fontScheme);
 
-
-            // Add Font to Fonts XML Sheet
+            // Add Default Font to Fonts XML Sheet
             fonts.Append(defaultFont);
 
 
+
+            // Create Bold Font
             Font boldFont = new Font();
 
+            Bold boldStyle = new Bold();
+            boldFont.Append(boldStyle);
+            boldFont.Append(fontSize);
 
+            color = new Color();
+            color.Theme = 1u;
+            boldFont.Append(color);
+
+            fontName = new FontName();
+            fontName.Val = "Calibri";
+            boldFont.Append(fontName);
+
+            fontFamilyNumbering = new FontFamilyNumbering();
+            fontFamilyNumbering.Val = 2;
+            boldFont.Append(fontFamilyNumbering);
+
+            fontScheme = new FontScheme();
+            fontScheme.Val = FontSchemeValues.Minor;
+            boldFont.Append(fontScheme);
+
+            // Add Bold Font to Fonts XML Sheet
+            fonts.Append(boldFont);
+
+            // Add Fonts Markup to XML
+            stylesheet.Append(fonts);
+
+
+
+
+
+
+            Fills fills = new Fills();
+            fills.Count = 2u;
+
+            Fill fill = new Fill();
+
+            PatternFill patternFill = new PatternFill();
+            patternFill.PatternType = PatternValues.None;
+
+            fill.Append(patternFill);
+
+            fills.Append(fill);
+
+            Fill fill1 = new Fill();
+
+            PatternFill patternFill1 = new PatternFill();
+            patternFill1.PatternType = PatternValues.Gray125;
+
+            fill1.Append(patternFill1);
+
+            fills.Append(fill1);
+
+            stylesheet.Append(fills);
 
 
         }
